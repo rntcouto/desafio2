@@ -1,0 +1,26 @@
+<mvc:View controllerName="ovly.desafio_2.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+	<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>title}">
+				<VBox>
+					<f:SimpleForm id="SimpleFormDisplayColumn_oneGroup" editable="true" layout="ResponsiveGridLayout" title="VIACEP">
+						<f:content>
+							<Label text="{i18n>cep}"/>
+							<MaskInput id="cepInput" value="{/cep}" mask="99999-999" placeholder="Digite somente números"/>
+							<Button text="Pesquisar" press="onPress"/>
+							<Label text="{i18n>rua}"/>
+							<Text id="rua" text="{/logradouro}"/>
+							<Label text="{i18n>bairro}"/>
+							<Text id="bairro" text="{/bairro}"/>
+							<Label text="{i18n>cidade}"/>
+							<Text id="cidade" text="{/localidade}"/>
+							<Label text="{i18n>uf}"/>
+							<Text id="uf" text="{/uf}"/>
+						</f:content>
+					</f:SimpleForm>
+				</VBox>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
