@@ -7,7 +7,7 @@
 					<f:SimpleForm id="SimpleFormDisplayColumn_oneGroup" editable="true" layout="ResponsiveGridLayout" title="VIACEP">
 						<f:content>
 							<Label text="{i18n>cep}"/>
-							<MaskInput id="cepInput" value="{/cep}" mask="99999-999" placeholder="Digite somente números"/>
+							<MaskInput id="cepInput" value="{/cep}" mask="99999-999" placeholder="Digite somente números" required="true"/>
 							<Button text="Pesquisar" press="onPress"/>
 							<Label text="{i18n>rua}"/>
 							<Text id="rua" text="{/logradouro}"/>

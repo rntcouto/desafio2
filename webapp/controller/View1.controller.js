@@ -6,9 +6,11 @@ sap.ui.define(['sap/ui/core/mvc/Controller', 'sap/ui/model/json/JSONModel', 'sap
 
 			onPress: function (oEvent) {
 
-				var newValue = this.byId("cepInput");
+				var newValue = this.byId("cepInput").mProperties.value;
 
-				var oData = `https://viacep.com.br/ws/${newValue.mProperties.value}/json/`;
+               if (newValue != "") {
+
+				var oData = `https://viacep.com.br/ws/${newValue}/json/`;
 
 				var oModel = new JSONModel(oData);
 
@@ -17,7 +19,12 @@ sap.ui.define(['sap/ui/core/mvc/Controller', 'sap/ui/model/json/JSONModel', 'sap
 				this.model.attachEvent("requestCompleted", this.onRequestComplete);
 
 				this.getView().setModel(oModel);
-
+				
+               }
+               else {
+                  	MessageToast.show("Preencher CEP");
+               	
+               }
 			},
 
 			onRequestComplete: function (oEvent) {
